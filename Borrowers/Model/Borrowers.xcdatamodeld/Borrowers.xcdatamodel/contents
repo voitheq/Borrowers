@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18C54" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Borrower" representedClassName=".Borrower" syncable="YES">
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="photo" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <relationship name="items" toMany="YES" deletionRule="Cascade" destinationEntity="Item" inverseName="borrower" inverseEntity="Item" syncable="YES"/>
+    </entity>
+    <entity name="Item" representedClassName=".Item" syncable="YES">
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="itemDescription" attributeType="String" syncable="YES"/>
+        <relationship name="borrower" maxCount="1" deletionRule="Nullify" destinationEntity="Borrower" inverseName="items" inverseEntity="Borrower" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Borrower" positionX="-297.35546875" positionY="-22.11328125" width="128" height="103"/>
+        <element name="Item" positionX="-79.18359375" positionY="51.296875" width="128" height="88"/>
+    </elements>
+</model>
